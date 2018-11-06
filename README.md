@@ -1,5 +1,5 @@
 # Azure-ARM-Terraform
-This shows some examples of ARM and Terraform templates.  The below are some slides around comparing the two.  Both are great options and 
+This shows some examples of ARM and Terraform templates.  The below are some slides around comparing the two.  Both are great options and provide the abilty to do Infrastructure as Code.  Please see the feature comparison at the end of the slides below.
 
 ![alt tag](https://raw.githubusercontent.com/adampaternostro/Azure-ARM-Terraform/master/images/Slide1.png)
 ![alt tag](https://raw.githubusercontent.com/adampaternostro/Azure-ARM-Terraform/master/images/Slide2.png)
