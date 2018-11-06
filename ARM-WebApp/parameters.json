@@ -1,0 +1,33 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "publishingUsername": {
+            "value": "myuniquename"
+        },
+        "publishingPassword": {
+            "value": "MySecert1Pass"
+        },
+        "webAppName": {
+            "value": "AzureTomcatDemo-WebApp-DEV"
+        },
+        "appServiceName": {
+            "value": "AzureTomcatDemo-AppService-DEV"
+        },
+        "configWebNameMain": {
+            "value": "web"
+        },
+        "slots_staging_name": {
+            "value": "staging"
+        },
+        "configWebNameStaging": {
+            "value": "web"
+        },
+        "hostNameMain": {
+            "value": "azuretomcatdemo-webapp-dev.azurewebsites.net"
+        },
+        "hostNameStaging": {
+            "value": "azuretomcatdemo-webapp-dev-staging.azurewebsites.net"
+        }
+    }
+}

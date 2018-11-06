@@ -1,0 +1,79 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "publishingUsername": {
+            "defaultValue": "myuniquename",
+            "type": "String"
+        },
+        "publishingPassword": {
+            "defaultValue": "MySecert1Pass",
+            "type": "String"
+        },
+        "webAppName": {
+            "defaultValue": "AzureTomcatDemo-WebApp-DEV",
+            "type": "String"
+        },
+        "appServiceName": {
+            "defaultValue": "AzureTomcatDemo-AppService-DEV",
+            "type": "String"
+        },
+        "configWebNameMain": {
+            "defaultValue": "web",
+            "type": "String"
+        },
+        "slots_staging_name": {
+            "defaultValue": "staging",
+            "type": "String"
+        },
+        "configWebNameStaging": {
+            "defaultValue": "web",
+            "type": "String"
+        },
+        "hostNameMain": {
+            "defaultValue": "azuretomcatdemo-webapp-dev.azurewebsites.net",
+            "type": "String"
+        },
+        "hostNameStaging": {
+            "defaultValue": "azuretomcatdemo-webapp-dev-staging.azurewebsites.net",
+            "type": "String"
+        }
+    },
+    "variables": {},
+    "resources": [
+        {
+            "apiVersion": "2017-05-10",
+            "name": "linkedAppService",
+            "type": "Microsoft.Resources/deployments",
+            "properties": {
+              "mode": "Incremental",
+              "templateLink": {
+                 "uri":"https://REPLACE_ME.blob.core.windows.net/arm-demo/template-app-service.json?st=2018-10-10T19%3A25%3A06Z&se=2019-10-11T19%3A25%3A00Z&sp=rl&sv=2018-03-28&sr=b&sig=VinpvH9CmTh6%2BPQuiC0ctpn4tBECOXhfyReqxNM378o%3D",
+                 "contentVersion":"1.0.0.0"
+              },
+              "parameters": {
+                "appServiceName":{"value": "[parameters('appServiceName')]"}
+              }
+            }
+         },
+         {
+            "apiVersion": "2017-05-10",
+            "name": "linkedAppWebApp",
+            "type": "Microsoft.Resources/deployments",
+            "properties": {
+              "mode": "Incremental",
+              "templateLink": {
+                 "uri":"https://REPLACE_ME.blob.core.windows.net/arm-demo/template-web-app.json?st=2018-10-10T19%3A24%3A49Z&se=2019-10-11T19%3A24%3A00Z&sp=rl&sv=2018-03-28&sr=b&sig=c91zXkXkF%2B2bPHoc2%2B9q%2BZ5rxSqmjkwdjwdibgE0IQM%3D",
+                 "contentVersion":"1.0.0.0"
+              },
+              "parametersLink": {
+                 "uri":"https://REPLACE_ME.blob.core.windows.net/arm-demo/parameters.json?st=2018-10-10T19%3A24%3A21Z&se=2019-10-11T19%3A24%3A00Z&sp=rl&sv=2018-03-28&sr=b&sig=sVJbjUdWl%2FtPWQIQsx0I4vOLASDNiT5wokvkp%2BC1Z7o%3D",
+                 "contentVersion":"1.0.0.0"
+              }
+            },
+            "dependsOn": [
+                "linkedAppService"
+            ]
+         }
+    ]     
+}

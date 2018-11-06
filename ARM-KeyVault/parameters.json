@@ -1,0 +1,14 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "secretstorageaccount": {
+            "reference": {
+                "keyVault": {
+                "id": "/subscriptions/REPLACE_ME_SUBSCRIPTION_ID/resourceGroups/Sample.KeyVault/providers/Microsoft.KeyVault/vaults/REPLACE_ME"
+                },
+                "secretName": "secretstorageaccount"
+            }
+        }
+    }
+}
