@@ -3,6 +3,8 @@ This shows some examples of ARM and Terraform templates.  The below are some sli
 
 **Please see the feature comparison at the end of the slides below.**
 
+To see a set of ARM templates using nesting (linked templates), complex data types, loops (entire resource or sub-resource), if statements (entire resource or just a sub-resource), etc. please see: https://github.com/AdamPaternostro/Azure-Sample-ARM-Template-Architecture
+
 If you are inclined to use YAML instead of JSON for ARM templates you can consider these options.
 * https://blog.mexia.com.au/writing-arm-templates-in-yaml
 * https://brokenco.de/2017/01/24/usable-arm-templates.html
